@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
+  const navigate = useNavigate();
+
   const signup = async () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -12,7 +15,7 @@ function Signup() {
     }
 
     try {
-      const response = await fetch("/backend/signup", {
+      const response = await fetch("backend/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,8 +34,8 @@ function Signup() {
         alert("Sign up successful!");
         // Store the token securely (e.g., in a cookie or local storage)
         localStorage.setItem("token", data.token);
-        // Redirect to the desired page
-        window.location.href = "order.html";
+        // Redirect to the desired page using react-router-dom
+        navigate("/order");
       } else {
         alert("Signup failed. Please try again.");
       }
@@ -66,19 +69,15 @@ function Signup() {
           <label htmlFor="password">Password:</label>
           <input type="password" id="password" name="password" required />
 
-          <button
-            type="button"
-            onClick={signup}
-            className="login-button"
-          >
+          <button type="button" onClick={signup} className="login-button">
             Sign Up
           </button>
         </form>
-
-        <script src="./signup.js"></script>
+        {/* Remove the script tag, as it's not necessary for react apps */}
       </main>
     </Fragment>
   );
 }
 
 export default Signup;
+
