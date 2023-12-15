@@ -111,3 +111,22 @@ For this deliverable I implemented by JavaScript so that the application works f
 - **restricted if no login** -If the user does not login with a valid email, they are unable to proceed from the login page. Ordering a drink/ accessing the other html pages is only possible after valid email authentication.
 
 - **past drink orders** - past drink order list stored for each user.
+
+## WebSocket deliverable
+
+For this deliverable I used webSocket to update the live chat on the frontend in realtime.
+You will find my websocket on my "about" page. So you first must login or signup
+
+- **Backend listens for WebSocket connection** - done, my backend is connected to the peerProxy.js server!
+- **Frontend makes WebSocket connection** - done, my code is set up to communicate to the front end!
+- **Data sent over WebSocket connection** - done, live chat and also name is sent in real time!
+- **WebSocket data displayed** - All user chats and names display in realtime. Took forever but glad it is working.
+
+## React deliverable
+
+I was able to succesfully convert my html structure to use react. I created many react components, some that contain my main pages html and some that deal with more javascript functionality. These modules can be found in the /src file. Then navigate to /components or /pages
+
+- **Bundled and transpiled** - done, took much time for this but figured it out!
+- **Components** - Home, Login, Signup, About, Locations, clearbutton, clickaddon, clickcup, clickdrink, clickice, clicksize, footer, header, logindata, and websocket are all components in /src
+- **Router** - Routing between each page, created routes for the above components on their respective page, also used it for websocket.
+- **Hooks** - Successfully implemented hooks for my login, signup, clear drinks, and click drinks functionalities, everything is working.
